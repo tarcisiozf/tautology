@@ -7,8 +7,8 @@ const isWhiteSpace = (char) => {
 const analyse = (input) => {
     const tokens = []
 
-    for (const it = new ListIterator(input); it.valid(); it.next()) {
-        const char = it.current()
+    for (const iterator = new ListIterator(input); iterator.valid(); iterator.next()) {
+        const char = iterator.current()
 
         if (isWhiteSpace(char)) {
             continue
