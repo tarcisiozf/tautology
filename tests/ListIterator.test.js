@@ -8,8 +8,8 @@ test('key', () => {
 
 test('next', () => {
     const it = new ListIterator("testing")
-    it.next()
 
+    expect(it.next()).toBe('t')
     expect(it.key()).toBe(1)
 })
 

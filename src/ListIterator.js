@@ -21,7 +21,7 @@ class ListIterator {
     }
 
     next() {
-        ++this.position
+        return this.value[this.position++]
     }
 
     valid() {
