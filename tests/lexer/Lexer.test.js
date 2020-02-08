@@ -65,6 +65,51 @@ test('should tokenize parentheses', () => {
     ])
 })
 
+test('should tokenize an complete expression', () => {
+    const result = Lexer.analyse('(FOO + BAR + BAZ) ⊕ ~LOL')
+
+    expect(result).toEqual([
+        {
+          type: TokenTypes.OPEN_PARENTHESIS,
+        },
+        {
+          type: TokenTypes.WORD,
+          value: 'FOO',
+        },
+        {
+          type: TokenTypes.FUNCTION_SYMBOL,
+          value: '+',
+        },
+        {
+          type: TokenTypes.WORD,
+          value: 'BAR',
+        },
+        {
+          type: TokenTypes.FUNCTION_SYMBOL,
+          value: '+',
+        },
+        {
+          type: TokenTypes.WORD,
+          value: 'BAZ',
+        },
+        {
+          type: TokenTypes.CLOSING_PARENTHESIS,
+        },
+        {
+          type: TokenTypes.FUNCTION_SYMBOL,
+          value: '⊕',
+        },
+        {
+          type: TokenTypes.FUNCTION_SYMBOL,
+          value: '~',
+        },
+        {
+          type: TokenTypes.WORD,
+          value: 'LOL',
+        },
+    ])
+})
+
 test('should raise syntax error on unreconized charaters', () => {
     const result = () => {
         Lexer.analyse('foo#')
