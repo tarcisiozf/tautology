@@ -1,6 +1,7 @@
 const ListIterator = require('./ListIterator')
 
 const isWhiteSpace = (char) => {
+    if (char === undefined) return false
     return char.match(/^\s$/)
 }
 
