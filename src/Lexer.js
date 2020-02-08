@@ -23,19 +23,25 @@ const extractWord = (iterator) => {
 }
 
 const analyse = (input) => {
+    const iterator = new ListIterator(input);
     const tokens = []
 
-    for (const iterator = new ListIterator(input); iterator.valid(); iterator.next()) {
+    while (iterator.valid()) {
         const char = iterator.current()
 
         if (isWhiteSpace(char)) {
+            iterator.next()
             continue
         }
         if (isWordToken(char)) {
             const word = extractWord(iterator)
 
             tokens.push({ type: TokenTypes.WORD, value: word })
+
+            continue
         }
+
+        iterator.next()
     }
 
     return tokens
