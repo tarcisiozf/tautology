@@ -1,4 +1,4 @@
-const ListIterator = require('./ListIterator')
+const ListIterator = require('../src/ListIterator')
 
 test('key', () => {
     const it = new ListIterator("testing")

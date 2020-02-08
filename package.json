@@ -10,7 +10,7 @@
     "build": "webpack -p",
     "lint": "node_modules/.bin/esw webpack.config.* src --color",
     "lint:watch": "npm run lint -- --watch",
-    "test": "jest"
+    "test": "jest tests/"
   },
   "keywords": [
     "es6"
