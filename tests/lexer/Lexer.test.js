@@ -1,5 +1,5 @@
-const Lexer = require('../src/Lexer')
-const TokenTypes = require('../src/TokenTypes')
+const Lexer = require('../../src/lexer/Lexer')
+const TokenTypes = require('../../src/lexer/TokenTypes')
 
 test('should ignore white spaces', () => {
     const result = Lexer.analyse('\r\n\t\f\v ')

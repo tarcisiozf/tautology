@@ -1,4 +1,4 @@
-const ListIterator = require('./ListIterator')
+const ListIterator = require('../ListIterator')
 const TokenTypes = require('./TokenTypes')
 
 const isWhiteSpace = (char) => {
