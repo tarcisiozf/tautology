@@ -5,6 +5,22 @@ const isWhiteSpace = (char) => {
     return char.match(/^\s$/)
 }
 
+const isWordToken = (char) => {
+    if (char === undefined) return false
+    return char.match(/^\w$/)
+}
+
+const extractWord = (iterator) => {
+    const word = []
+
+    do {
+        word.push(iterator.current())
+        iterator.next()
+    } while (isWordToken(iterator.current()))
+
+    return word.join('')
+}
+
 const analyse = (input) => {
     const tokens = []
 
@@ -13,6 +29,11 @@ const analyse = (input) => {
 
         if (isWhiteSpace(char)) {
             continue
+        }
+        if (isWordToken(char)) {
+            const word = extractWord(iterator)
+
+            tokens.push({ type: 'word', value: word })
         }
     }
 
