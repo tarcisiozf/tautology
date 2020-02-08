@@ -17,3 +17,11 @@ test('should extract word', () => {
         }
     ])
 })
+
+test('should raise syntax error on unreconized charaters', () => {
+    const result = () => {
+        Lexer.analyse('foo#')
+    }
+
+    expect(result).toThrow('unrecognized character \'#\'')
+})

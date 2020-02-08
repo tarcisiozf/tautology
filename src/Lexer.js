@@ -33,12 +33,15 @@ const analyse = (input) => {
             iterator.next()
             continue
         }
-        if (isWordToken(char)) {
+        else if (isWordToken(char)) {
             const word = extractWord(iterator)
 
             tokens.push({ type: TokenTypes.WORD, value: word })
 
             continue
+        }
+        else {
+            throw new SyntaxError(`unrecognized character '${char}'`)
         }
 
         iterator.next()
