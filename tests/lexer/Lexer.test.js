@@ -37,6 +37,21 @@ test('should extract multiple words', () => {
     ])
 })
 
+test('should extract function symbol', () => {
+    const symbols = ['¬','~','∧','&','.','∨','+','⇒','→','↔','=','≡','⊕','≠','↑','|','↓']
+
+    for (const symbol of symbols) {
+        const result = Lexer.analyse(symbol)
+
+        expect(result).toEqual([
+            {
+                type: TokenTypes.FUNCTION_SYMBOL,
+                value: symbol
+            }
+        ])
+    }
+})
+
 test('should raise syntax error on unreconized charaters', () => {
     const result = () => {
         Lexer.analyse('foo#')

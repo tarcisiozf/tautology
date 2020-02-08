@@ -3,6 +3,7 @@ const ListIterator = require('../ListIterator')
 const analyzers = [
     require('./WhiteSpaceAnalyser'),
     require('./WordAnalyser'),
+    require('./FunctionSymbolAnalyzer'),
 ]
 
 const analyse = (input) => {
