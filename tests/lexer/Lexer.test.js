@@ -18,6 +18,25 @@ test('should extract word', () => {
     ])
 })
 
+test('should extract multiple words', () => {
+    const result = Lexer.analyse(' foo bar\tbaz')
+
+    expect(result).toEqual([
+        {
+            type: TokenTypes.WORD,
+            value: 'foo'
+        },
+        {
+            type: TokenTypes.WORD,
+            value: 'bar'
+        },
+        {
+            type: TokenTypes.WORD,
+            value: 'baz'
+        }
+    ])
+})
+
 test('should raise syntax error on unreconized charaters', () => {
     const result = () => {
         Lexer.analyse('foo#')
