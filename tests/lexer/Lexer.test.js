@@ -52,6 +52,19 @@ test('should extract function symbol', () => {
     }
 })
 
+test('should tokenize parentheses', () => {
+    const result = Lexer.analyse(' ( ) ')
+
+    expect(result).toEqual([
+        {
+            type: TokenTypes.OPEN_PARENTHESIS,
+        },
+        {
+            type: TokenTypes.CLOSING_PARENTHESIS,
+        },
+    ])
+})
+
 test('should raise syntax error on unreconized charaters', () => {
     const result = () => {
         Lexer.analyse('foo#')

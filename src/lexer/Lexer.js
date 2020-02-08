@@ -4,6 +4,7 @@ const analyzers = [
     require('./WhiteSpaceAnalyzer'),
     require('./WordAnalyzer'),
     require('./FunctionSymbolAnalyzer'),
+    require('./ParenthesesAnalyzer'),
 ]
 
 const analyse = (input) => {
