@@ -1,8 +1,8 @@
 const ListIterator = require('../ListIterator')
 
 const analyzers = [
-    require('./WhiteSpaceAnalyser'),
-    require('./WordAnalyser'),
+    require('./WhiteSpaceAnalyzer'),
+    require('./WordAnalyzer'),
     require('./FunctionSymbolAnalyzer'),
 ]
 
