@@ -1,4 +1,5 @@
 const ListIterator = require('./ListIterator')
+const TokenTypes = require('./TokenTypes')
 
 const isWhiteSpace = (char) => {
     if (char === undefined) return false
@@ -33,7 +34,7 @@ const analyse = (input) => {
         if (isWordToken(char)) {
             const word = extractWord(iterator)
 
-            tokens.push({ type: 'word', value: word })
+            tokens.push({ type: TokenTypes.WORD, value: word })
         }
     }
 
