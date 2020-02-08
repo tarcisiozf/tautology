@@ -9,7 +9,8 @@
     "watch": "webpack -w -d",
     "build": "webpack -p",
     "lint": "node_modules/.bin/esw webpack.config.* src --color",
-    "lint:watch": "npm run lint -- --watch"
+    "lint:watch": "npm run lint -- --watch",
+    "test": "jest"
   },
   "keywords": [
     "es6"
@@ -22,6 +23,7 @@
     "babel-loader": "^8.0.4",
     "eslint": "^5.10.0",
     "eslint-watch": "^4.0.2",
+    "jest": "^25.1.0",
     "npm-run-all": "^4.0.2",
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2",
